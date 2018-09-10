@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: hist
+# key: hist
+# --
+plt.hist(${1:list}, bins=${2:50}, range=(${3:list.min(), list.max()}), histtype="step")

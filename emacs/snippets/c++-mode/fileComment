@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+#name: fileComment
+#key: fileComment
+# --
+////////////////////////////////////////////////////////////////////////
+/// COPYRIGHT NOTICE
+/// COPYRIGHT (c) 2018, 金小海
+/// All rights reserved.
+///
+/// \file ${1:????}
+/// \version ${2:1.0}
+/// \author jinxiaohai <xiaohaijin@outlook.com>
+/// \date ${3:time}
+/// \brief ${4:描述}
+///
+/// 修订说明：最初版本。
+////////////////////////////////////////////////////////////////////////

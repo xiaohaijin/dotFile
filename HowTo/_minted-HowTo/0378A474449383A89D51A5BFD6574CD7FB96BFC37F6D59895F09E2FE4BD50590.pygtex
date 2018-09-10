@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+  \PYG{n+nb}{cmake\PYGZus{}minimum\PYGZus{}required}\PYG{p}{(}\PYG{l+s}{VERSION} \PYG{l+s}{3.0}\PYG{p}{)}
+
+  \PYG{n+nb}{set}\PYG{p}{(}\PYG{l+s}{CMAKE\PYGZus{}PREFIX\PYGZus{}PATH} \PYG{l+s+s2}{\PYGZdq{}/opt/boost/install\PYGZdq{}}\PYG{p}{)}
+  \PYG{n+nb}{set}\PYG{p}{(}\PYG{l+s}{Boost\PYGZus{}USE\PYGZus{}STATIC\PYGZus{}LIBS} \PYG{l+s}{OFF}\PYG{p}{)}
+  \PYG{n+nb}{set}\PYG{p}{(}\PYG{l+s}{Boost\PYGZus{}USE\PYGZus{}MULTITHREADED} \PYG{l+s}{ON}\PYG{p}{)}
+  \PYG{n+nb}{set}\PYG{p}{(}\PYG{l+s}{Boost\PYGZus{}STATIC\PYGZus{}RUNTIME} \PYG{l+s}{OFF}\PYG{p}{)}
+
+  \PYG{n+nb}{find\PYGZus{}package}\PYG{p}{(}\PYG{l+s}{Boost}\PYG{p}{)}
+  \PYG{n+nb}{include\PYGZus{}directories}\PYG{p}{(}\PYG{l+s}{\PYGZbs{}\PYGZdl{}\PYGZob{}Boost\PYGZus{}INCLUDE\PYGZus{}DIRS\PYGZcb{})}
+
+  \PYG{l+s}{message(STATUS} \PYG{l+s}{\PYGZbs{}\PYGZdl{}\PYGZob{}Boost\PYGZus{}INCLUDE\PYGZus{}DIRS\PYGZcb{})}
+  \PYG{l+s}{message(STATUS} \PYG{l+s}{\PYGZbs{}\PYGZdl{}\PYGZob{}Boost\PYGZus{}LIBRARIES\PYGZcb{})}
+
+  \PYG{l+s}{add\PYGZus{}subdirectory(src}\PYG{p}{)}
+\end{Verbatim}

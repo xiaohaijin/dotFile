@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: SetLabelOffset
+# key:  SetLabelOffset
+# --
+${1:hisgram}->GetXaxis()->SetLabelOffset(${2:1.});
+$1->GetYaxis()->SetLabelOffset(${3:1.});

@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# name: book
+# key: book
+# --
+%#-*- coding:utf-8 -*-
+\documentclass[11pt,UTF8,openany]{ctexbook}
+\usepackage{ctex}
+
+\author{xiaohai}
+\date{1990/10/12}
+\title{${1:my title}}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\chapter{${2:the name of chapter}}
+$0
+\end{document}
+        

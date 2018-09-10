@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+  sudo apt\PYGZhy{}get \PYGZhy{}y install libopencv\PYGZhy{}dev build\PYGZhy{}essential cmake libdc1394\PYGZhy{}22 libdc1394\PYGZhy{}22\PYGZhy{}dev libjpeg\PYGZhy{}dev libpng12\PYGZhy{}dev
+   libtiff\PYGZhy{}dev
+   libjasper\PYGZhy{}dev
+   libavcodec\PYGZhy{}dev
+   libavformat\PYGZhy{}dev
+   libswscale\PYGZhy{}dev
+   libxine\PYGZhy{}dev
+   libgstreamer0.10\PYGZhy{}dev
+   libgstreamer\PYGZhy{}plugins\PYGZhy{}base0.10\PYGZhy{}dev
+   libv41\PYGZhy{}dev
+   libtbb\PYGZhy{}dev
+   libqt4\PYGZhy{}dev
+   libmp3lame\PYGZhy{}dev
+   libopencore\PYGZhy{}amrnb\PYGZhy{}dev
+   libopencore\PYGZhy{}amrwb\PYGZhy{}dev
+   libtheora\PYGZhy{}dev
+   libvorbis\PYGZhy{}dev
+   libxvidcore\PYGZhy{}dev
+   x264
+   v41\PYGZhy{}utils\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

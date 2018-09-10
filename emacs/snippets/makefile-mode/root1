@@ -1,0 +1,55 @@
+# -*- mode: snippet -*-
+# name: root1
+# contributor: xiaohai
+# expand-env: ((yas-indent-line 'fixed))
+# key: root1
+# --
+                  ##########################################################
+                  ##                 Created  by  xiaohai                 ##
+                  ##                 Telphone : 18501781924               ##
+                  ##            E-mail : jinxiaohai@sinap.ac.cn           ##
+                  ##            E-mail : xiaohaijin@outlook.com           ##
+                  ##   Address : Shanghai Institute of Applied Physics    ##
+                  ##########################################################
+# command and command parameters
+CXX := g++ -std=c++11
+CXXFLAGS := -Wall -g -O3
+
+# define some variables of directory
+PWD := $(shell pwd)
+SRC := $(PWD)/src
+OBJ := $(PWD)/obj
+BIN := $(PWD)/bin
+INC := $(PWD)/include
+SAM := $(PWD)/samples
+
+vpath %.h    $(INC)
+vpath %.cpp  $(SRC)
+vpath %.o    $(OBJ)
+
+# root libraries
+ROOTLIBS := $(shell root-config --libs)
+ROOTGLIBS := $(shell root-config --glibs)
+
+INCDIR   = -I$(INC)
+INCDIRROOT = -I\$(ROOTSYS)/include
+LIBDIR = -L\$(ROOTSYS)/lib
+
+SOURCE  := $(notdir $(wildcard $(SRC)/*.cpp))
+OBJECT  := $(patsubst %.cpp,%.o,$(SOURCE))
+OBJECTS  := $(patsubst %.cpp,$(OBJ)/%.o,$(SOURCE))
+
+EXE = ${1:demo}.exe
+all:$(EXE)
+
+$(EXE):$(OBJECT)
+	@$(CXX) $(CXXFLAGS) -o $(BIN)/$(EXE) $(OBJECTS) $(ROOTLIBS) $(ROOTGILBS)
+	@echo -e "\033[7;31m Compile done. \033[0m"
+
+$(OBJECT):%.o:%.cpp
+	@$(CXX) -c $< -o $(OBJ)/$@ $(INCDIR) $(INCDIRROOT) $(LIBDIR)
+
+.PHONY:clean
+clean:
+	@$(RM) -r $(OBJECTS) $(BIN)/$(EXE)
+	@echo -e "\033[7;31m Clean done. \033[0m"

@@ -1,0 +1,28 @@
+# -*- mode: snippet -*-
+# name: rb
+# contributor: xiaohai
+# expand-env: ((yas-indent-line 'fixed))
+# key: opengl
+# --
+
+EXE = ${1:ana}.exe
+OBJ = $1.o $0
+BOOSTLIBS    =   \$(shell forBoost)
+OPENGLLIBS   =   -L/usr/lib64 -lGL -lGLU -lglut
+
+BOOSTINCDIR = -I\$(BOOSTSYS)/include
+BOOSTLIBDIR = -L\$(BOOSTSYS)/lib
+
+CC = g++ -std=c++11
+FLAGS = -Wall -g \$(BOOSTINCDIR) \$(BOOSTLIBDIR)
+COMPILE = \$(CC) \$(FLAGS) -c
+
+\$(EXE):\$(OBJ)
+	\$(CC) -o \$(EXE) \$(OBJ) \$(BOOSTLIBS) \$(OPENGLLIBS)
+
+%.o:%.cpp
+	$(COMPILE) $< -o $@
+
+.PHONY:clean
+clean:
+	$(RM) -r \$(OBJ) \$(EXE)

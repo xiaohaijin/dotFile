@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+  \PYG{c}{\PYGZsh{} 生成files}
+  \PYG{n+nb}{file}\PYG{p}{(}\PYG{l+s}{GLOB} \PYG{l+s}{SRC} \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}\PYGZob{}PROJECT\PYGZus{}SOURCE\PYGZus{}DIR\PYGZcb{}/src/*.cpp\PYGZdq{}}\PYG{p}{)}
+  \PYG{n+nb}{file}\PYG{p}{(}\PYG{l+s}{GLOB} \PYG{l+s}{MOC\PYGZus{}HEADER} \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}\PYGZob{}PROJECT\PYGZus{}SOURCE\PYGZus{}DIR\PYGZcb{}/include/*.h\PYGZdq{}}\PYG{p}{)}
+  \PYG{n+nb}{file}\PYG{p}{(}\PYG{l+s}{GLOB} \PYG{l+s}{UIC\PYGZus{}UI} \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}\PYGZob{}PROJECT\PYGZus{}SOURCE\PYGZus{}DIR\PYGZcb{}/ui/*.ui\PYGZdq{}}\PYG{p}{)}
+  \PYG{n+nb}{file}\PYG{p}{(}\PYG{l+s}{GLOB} \PYG{l+s}{QRC} \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}\PYGZob{}PROJECT\PYGZus{}SOURCE\PYGZus{}DIR\PYGZcb{}/resources/action.qrc\PYGZdq{}}\PYG{p}{)}
+
+  \PYG{c}{\PYGZsh{} 通过UI文件生成对应的头文件}
+  \PYG{n+nb}{qt5\PYGZus{}wrap\PYGZus{}cpp}\PYG{p}{(}\PYG{l+s}{MOC\PYGZus{}SRC} \PYG{o}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{MOC\PYGZus{}HEADER}\PYG{o}{\PYGZcb{}}\PYG{p}{)}
+  \PYG{n+nb}{qt5\PYGZus{}wrap\PYGZus{}ui}\PYG{p}{(}\PYG{l+s}{UIC\PYGZus{}SRC} \PYG{o}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{UIC\PYGZus{}UI}\PYG{o}{\PYGZcb{}}\PYG{p}{)}
+  \PYG{n+nb}{qt5\PYGZus{}add\PYGZus{}resources}\PYG{p}{(}\PYG{l+s}{QRC\PYGZus{}SRC} \PYG{o}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{QRC}\PYG{o}{\PYGZcb{}}\PYG{p}{)}
+
+  \PYG{c}{\PYGZsh{} 添加目标文件}
+  \PYG{n+nb}{add\PYGZus{}executable}\PYG{p}{(}\PYG{o}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{PROJECT\PYGZus{}NAME}\PYG{o}{\PYGZcb{}} \PYG{o}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{SRC}\PYG{o}{\PYGZcb{}} \PYG{o}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{MOC\PYGZus{}SRC}\PYG{o}{\PYGZcb{}} \PYG{o}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{UIC\PYGZus{}SRC}\PYG{o}{\PYGZcb{}} \PYG{o}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{QRC\PYGZus{}SRC}\PYG{o}{\PYGZcb{}}\PYG{p}{)}
+
+  \PYG{c}{\PYGZsh{} 添加依赖库}
+  \PYG{n+nb}{target\PYGZus{}link\PYGZus{}libraries}\PYG{p}{(}\PYG{o}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{PROJECT\PYGZus{}NAME}\PYG{o}{\PYGZcb{}} \PYG{l+s}{Qt5::Widgets} \PYG{l+s}{Qt5::Core} \PYG{l+s}{Qt5::Gui}\PYG{p}{)}
+
+  \PYG{c}{\PYGZsh{} 安装}
+  \PYG{n+nb}{install}\PYG{p}{(}\PYG{l+s}{TARGETS} \PYG{o}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{PROJECT\PYGZus{}NAME}\PYG{o}{\PYGZcb{}}
+          \PYG{l+s}{RUNTIME} \PYG{l+s}{DESTINATION} \PYG{l+s}{bin}\PYG{p}{)}
+\end{Verbatim}

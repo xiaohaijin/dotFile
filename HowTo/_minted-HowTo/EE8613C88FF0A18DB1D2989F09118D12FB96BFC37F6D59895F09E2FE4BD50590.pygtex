@@ -1,0 +1,33 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+  \PYG{c}{\PYGZsh{} 最低需要2.8.11版本}
+  \PYG{n+nb}{cmake\PYGZus{}minimum\PYGZus{}required}\PYG{p}{(}\PYG{l+s}{VERSION} \PYG{l+s}{3.0}\PYG{p}{)}
+
+  \PYG{c}{\PYGZsh{} 设定Qt的安装位置}
+  \PYG{n+nb}{set}\PYG{p}{(}\PYG{l+s}{CMAKE\PYGZus{}PREFIX\PYGZus{}PATH} \PYG{l+s+s2}{\PYGZdq{}/opt/qt/install/\PYGZdq{}}\PYG{p}{)}
+
+  \PYG{c}{\PYGZsh{} include的目录包含当前目录}
+  \PYG{n+nb}{set}\PYG{p}{(}\PYG{l+s}{CMAKE\PYGZus{}INCLUDE\PYGZus{}CURRENT\PYGZus{}DIR} \PYG{l+s}{ON}\PYG{p}{)}
+
+  \PYG{c}{\PYGZsh{} 工程名字}
+  \PYG{n+nb}{project}\PYG{p}{(}\PYG{l+s}{QtUseCMake}\PYG{p}{)}
+
+  \PYG{c}{\PYGZsh{} 查找需要的Qt库文件}
+  \PYG{n+nb}{find\PYGZus{}package}\PYG{p}{(}\PYG{l+s}{Qt5Widgets} \PYG{l+s}{REQUIRED}\PYG{p}{)}
+  \PYG{n+nb}{find\PYGZus{}package}\PYG{p}{(}\PYG{l+s}{Qt5Core} \PYG{l+s}{REQUIRED}\PYG{p}{)}
+  \PYG{n+nb}{find\PYGZus{}package}\PYG{p}{(}\PYG{l+s}{Qt5Gui} \PYG{l+s}{REQUIRED}\PYG{p}{)}
+
+  \PYG{c}{\PYGZsh{} 设定头文件和UI的搜索路径}
+  \PYG{n+nb}{set}\PYG{p}{(}\PYG{l+s}{HEADER\PYGZus{}DIR} \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}\PYGZob{}CMAKE\PYGZus{}CURRENT\PYGZus{}SOURCE\PYGZus{}DIR\PYGZcb{}/include\PYGZdq{}}\PYG{p}{)}
+  \PYG{n+nb}{set}\PYG{p}{(}\PYG{l+s}{GUI\PYGZus{}DIR} \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}\PYGZob{}CMAKE\PYGZus{}CURRENT\PYGZus{}SOURCE\PYGZus{}DIR\PYGZcb{}/ui\PYGZdq{}}\PYG{p}{)}
+  \PYG{n+nb}{set}\PYG{p}{(}\PYG{l+s}{RESOURCES\PYGZus{}DIR} \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}\PYGZob{}CMAKE\PYGZus{}CURRENT\PYGZus{}SOURCE\PYGZus{}DIR\PYGZcb{}/resources\PYGZdq{}}\PYG{p}{)}
+
+  \PYG{c}{\PYGZsh{} 添加头文件的搜索路径}
+  \PYG{n+nb}{include\PYGZus{}directories}\PYG{p}{(}\PYG{o}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{HEADER\PYGZus{}DIR}\PYG{o}{\PYGZcb{}}\PYG{p}{)}
+
+  \PYG{c}{\PYGZsh{} 添加子目录}
+  \PYG{n+nb}{add\PYGZus{}subdirectory}\PYG{p}{(}\PYG{l+s}{src}\PYG{p}{)}
+
+  \PYG{c}{\PYGZsh{} 安装}
+  \PYG{n+nb}{install}\PYG{p}{(}\PYG{l+s}{FILES} \PYG{l+s}{COPYRIGHT} \PYG{l+s}{README.md}
+          \PYG{l+s}{DESTINATION} \PYG{l+s}{doc}\PYG{p}{)}
+\end{Verbatim}

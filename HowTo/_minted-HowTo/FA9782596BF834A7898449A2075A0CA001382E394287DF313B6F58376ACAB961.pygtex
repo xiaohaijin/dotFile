@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+tar \PYGZhy{}zvxf cmake.tar.gz
+\PYGZpc{} \PYG{l+s+se}{\PYGZbs{}t}extbf\PYG{o}{\PYGZob{}}\PYG{l+s+se}{\PYGZbs{}c}olor\PYG{o}{\PYGZob{}}magenta\PYG{o}{\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}\PYGZdl{}} \PYG{n+nb}{cd} cmake\PYG{o}{\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}
+\PYGZpc{} \PYG{l+s+se}{\PYGZbs{}t}extbf\PYG{o}{\PYGZob{}}\PYG{l+s+se}{\PYGZbs{}c}olor\PYG{o}{\PYGZob{}}magenta\PYG{o}{\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}\PYGZdl{}} ./configure \PYGZhy{}\PYGZhy{}prefix\PYG{o}{=}to/install/path \PYGZhy{}\PYG{l+s+se}{\PYGZbs{},}\PYGZhy{}qt\PYGZhy{}gui\PYG{o}{\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}
+\PYGZpc{} \PYG{l+s+se}{\PYGZbs{}t}extbf\PYG{o}{\PYGZob{}}\PYG{l+s+se}{\PYGZbs{}c}olor\PYG{o}{\PYGZob{}}magenta\PYG{o}{\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}\PYGZdl{}} make \PYGZhy{}j4\PYG{o}{\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}
+\PYGZpc{} \PYG{l+s+se}{\PYGZbs{}t}extbf\PYG{o}{\PYGZob{}}\PYG{l+s+se}{\PYGZbs{}c}olor\PYG{o}{\PYGZob{}}magenta\PYG{o}{\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}\PYGZdl{}} make install\PYG{o}{\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}
+\end{Verbatim}

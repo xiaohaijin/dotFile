@@ -1,0 +1,69 @@
+# -*- mode: snippet -*-
+# name: talk
+# key: talk
+# --
+% #-*- coding:utf-8 -*-
+\documentclass[8pt]{beamer}
+\usepackage[space,noindent]{ctex}
+\usepackage{beamerthemeshadow}
+
+\title{11.5 GeV下Omega和Phi的spectra和ratio}
+\author{金小海}
+\date{\today}
+
+\begin{document}
+% _______________________________________________________________
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% _______________________________________________________________
+\begin{frame}
+  \frametitle{参数的设置和说明}
+  \heiti{\huge{系统的能量为11.5 GeV}}\\\\\\vspace{5mm}
+  \heiti{\huge{a = 0.5\hspace{5mm} b = 0.9}}\\\\\\vspace{5mm}
+  \heiti{\huge{部分子散射截面为10 mb}}\\\\\\vspace{5mm}
+  \heiti{\huge{cluster的数量为4}}\\\\\\vspace{5mm}
+  \heiti{\huge{cluster的半径为1fm}}
+\end{frame}
+
+% _______________________________________________________________
+
+\begin{frame}
+  \frametitle{Spectra}
+  左边的为$\Omega$的spectra,实验上$\Omega^{-}$和$\bar{\Omega}^{+}$的分bin好像不一样，所以这里我用
+  $\Omega^{-}$来代替$\Omega$的值，右边的为$\phi$的spectra。
+  \begin{columns}[onlytextwidth]
+
+    \begin{column}{0.5\textwidth}
+      \begin{figure}[!ht]
+        \centering
+        \includegraphics[width=\columnwidth]{./figure/omegaYield.eps}
+        % \caption{OmegaSpectra}
+      \end{figure}
+    \end{column}
+
+    \begin{column}{0.5\textwidth}
+      \begin{figure}[!ht]
+        \centering
+        \includegraphics[width=\columnwidth]{./figure/phiYield.eps}
+        % \caption{phiYield}
+      \end{figure}
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+% _______________________________________________________________
+\begin{frame}
+  \frametitle{ratio}
+  Omega和Phi的 spectra的比值。
+  \begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{./figure/ratio.eps}
+    % \caption{ratio}
+  \end{figure}
+
+\end{frame}
+
+\end{document}

@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: define operator[]
+# key: operator[]
+# --
+${1:Type}& operator[](${2:int index})
+{
+        $0
+}

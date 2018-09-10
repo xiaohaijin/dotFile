@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name: variableComment
+#key: variableComment
+# --
+///< $0

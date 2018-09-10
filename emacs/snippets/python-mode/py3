@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# key: py3
+# group: Header
+# --
+#!/usr/bin/env python3
+# _*_ coding: utf-8 _*_
+
+"""
+author : xiaohai
+email : xiaohaijin@outlook.com
+"""
+
+
+import $0

@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: SetMargin
+# key:  SetMargin
+# --
+${1:pad}->SetLeftMargin(${2:0.1});
+$1->SetRightMargin(${3:0.1});
+$1->SetTopMargin(${4:0.1});
+$1->SetBottomMargin(${5:0.1});

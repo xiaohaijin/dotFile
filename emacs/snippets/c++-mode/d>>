@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: declaration_operator>>
+# key: operator>>
+# --
+friend std::istream& operator>>(std::istream&, const ${1:Class}&);

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Scale
+# key: Scale
+# --
+Scale($1);

@@ -1,0 +1,20 @@
+# -*- mode: snippet -*-
+# name: latex
+# contributor: xiaohai
+# expand-env: ((yas-indent-line 'fixed))
+# key: latex
+# --
+EXE=${1:demo}.pdf
+SRC=$1.tex
+BIB=$1.aux
+
+$(EXE):$(SRC)
+	xelatex \$(SRC)
+
+.PHONY.:look
+look:
+	evince $1.pdf
+
+.PHONY.:clean
+clean:
+	$(RM) $1.aux $1.log $1.pdf $1.dvi $1.bbl $1.blg $1.toc $1.out $1.nav $1.snm $1.thm $1.lot $1.lof

@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+tar \PYGZhy{}zvxf cmake.tar.gz
+\PYG{n+nb}{cd} cmake
+./configure \PYGZhy{}\PYGZhy{}prefix\PYG{o}{=}to/install/path \PYGZhy{}\PYG{l+s+se}{\PYGZbs{},}\PYGZhy{}qt\PYGZhy{}gui
+make \PYGZhy{}j4
+make install
+\end{Verbatim}

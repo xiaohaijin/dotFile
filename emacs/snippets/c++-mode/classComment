@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+#name: classComment
+#key: classComment
+# --
+///  \brief ${1:class description}
+///
+///  ${2:Detailed description}
+///

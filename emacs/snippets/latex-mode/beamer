@@ -1,0 +1,60 @@
+# -*- mode: snippet -*-
+# name: beamer
+# key: beamer
+# --
+% -*- coding:utf-8 -*-
+\documentclass[10pt]{beamer}
+
+\usepackage{ctex}
+
+%%% 重新定义自己想要的样式
+\definecolor{seagreen}{RGB}{46, 139, 87}
+\newcommand{\meeting}{平时讨论}
+%%% frame title
+\setbeamertemplate{frametitle}{\centering\insertframetitle\par\rule[5mm]{\textwidth}{1.5pt}}
+\setbeamercolor{frametitle}{fg=seagreen, bg=white}
+%%% foot line
+\setbeamertemplate{footline}{\centering\rule[0.5mm]{\textwidth}{1.pt}
+  {\meeting \hspace{90mm} \insertframenumber} \\\\
+  \centering\rule[0mm]{\textwidth}{1.pt}}
+\setbeamerfont{footline}{size=\normalsize}
+\setbeamercolor{footline}{fg=seagreen, bg=white}
+%%% title
+\setbeamercolor{title}{fg=seagreen, bg=white}
+%%% itemize
+\setbeamertemplate{itemize item}{\adfhalfrightarrowhead}
+\setbeamerfont{itemize item}{size=\LARGE}
+\setbeamercolor{itemize item}{fg=seagreen}
+%%% url
+\hypersetup{linkcolor=seagreen,colorlinks=true}
+%%% 导航条
+\setbeamertemplate{navigation symbols}[only frame symbol]
+
+\begin{document}
+
+\title{\color{black}我是该报告的题目，记得进行修改}
+\author{Jin Xiaohai}
+\logo{\includegraphics[width=0.1\textwidth]{image/logo.jpg}}
+\institute{\normalsize{Shanghai Institute of Applied Physics, CAS}}
+\date{\meeting \hspace{4mm} \today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[plain]
+  \maketitle
+  \begin{columns}[c]
+    \column{0.5\textwidth}
+    \includegraphics[width=\textwidth]{image/sinap.jpg}
+    \column{0.5\textwidth}
+    \includegraphics[width=\textwidth]{image/ucas.eps}
+  \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle{我是帧标题，记得进行修改}
+  内容。。。。balabala
+\end{frame}
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

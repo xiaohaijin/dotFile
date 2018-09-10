@@ -1,0 +1,42 @@
+# -*- mode: snippet -*-
+# name: full template of article class
+# key: article
+# --
+\documentclass[11pt,a4paper,openany]{article}
+\usepackage{amsmath}             %%%%多种的公式环境和数学命令
+\usepackage{amssymb}             %%%%数学符号生成命令
+\usepackage{array}               %%%%数组和表格
+\usepackage{booktabs}            %%%%水平的表格线
+\usepackage{calc}                %%%%四则运算
+\usepackage{caption}             %%%%插图和表格
+\usepackage{ctex}                %%%%中文字体
+\usepackage{ctexcap}             %%%%中文字体和标题
+\usepackage{fancyhdr}            %%%%页眉页脚设置
+\usepackage{graphicx}            %%%%插图
+\usepackage{geometry}            %%%%版面尺寸控制
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm, head=2cm, foot=1cm}
+%head=?cm, headmap=?cm
+\usepackage{hyperref}            %%%%超链接
+\usepackage{ifthen}              %%%%条件
+\usepackage{longtable}           %%%%跨页表格
+\usepackage{multicol}            %%%%多栏
+\usepackage{ntheorem}            %%%%定理设置
+\usepackage{paralist}            %%%%列表
+\usepackage{tabularx}            %%%%表格的列宽
+\usepackage{titlesec}            %%%%章节标题
+\usepackage{fancyvrb}            %%%%抄录
+\usepackage{fontspec}            %%%%字体
+\usepackage{titletoc}            %%%%目录格式
+\usepackage{xcolor}              %%%%颜色处理
+\usepackage{xeCJK}               %%%%中日朝文字处理
+
+\newcommand{\mycmdA}{ }
+\newcommand{\mycmdB}[1]{{\heiti #1}}
+\newcommand{\mycmdC}[2]{$#1_1,#1_2,\dots,#1_#2$}
+
+
+\begin{document}
+
+$0
+
+\end{document}

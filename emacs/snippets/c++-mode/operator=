@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: define operator=
+# key: operator=
+# --
+${1:MyClass}& $1::operator=(const $1 &rhs)
+{
+    // Check for self-assignment!
+    if (this == &rhs)
+      return *this;
+    $0
+    return *this;
+}

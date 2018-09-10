@@ -1,0 +1,39 @@
+# -*- mode: snippet -*-
+# name: rb
+# contributor: xiaohai
+# expand-env: ((yas-indent-line 'fixed))
+# key: rb
+# --
+##########################################################
+##                 Created  by  xiaohai                 ##
+##                 Telphone : 18501781924               ##
+##            E-mail : jinxiaohai@sinap.ac.cn           ##
+##            E-mail : xiaohaijin@outlook.com           ##
+##   Address : Shanghai Institute of Applied Physics    ##
+##########################################################
+
+EXE = ${1:ana}.exe
+OBJ = $1.o $0
+ROOTLIBS     =   \$(shell root-config --libs)
+ROOTGLIBS    =   \$(shell root-config --glibs)
+BOOSTLIBS    =   \$(shell forBoost)
+OPENGLLIBS   =   -L/usr/lib64 -lGL -lGLU -lglut
+
+INCDIR = -I\$(ROOTSYS)/include
+LIBDIR = -L\$(ROOTSYS)/lib
+BOOSTINCDIR = -I\$(BOOSTSYS)/include
+BOOSTLIBDIR = -L\$(BOOSTSYS)/lib
+
+CC = g++ -std=c++11
+FLAGS = -Wall -g \$(INCDIR) \$(LIBDIR) \$(BOOSTINCDIR) \$(BOOSTLIBDIR)
+COMPILE = \$(CC) \$(FLAGS) -c
+
+\$(EXE):\$(OBJ)
+	\$(CC) -o \$(EXE) \$(OBJ) \$(ROOTLIBS) \$(ROOTGLIBS) \$(BOOSTLIBS) \$(OPENGLLIBS)
+
+%.o:%.cpp
+	$(COMPILE) $< -o $@
+
+.PHONY:clean
+clean:
+	$(RM) -r \$(OBJ) \$(EXE)

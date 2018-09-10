@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: SetRangeUser
+# key:  SetRangeUser
+# --
+${1:his}->GetXaxis()->SetRangeUser(${2:xmin, xmax});
+$1->GetYaxis()->SetRangeUser(${3:ymin, ymax});

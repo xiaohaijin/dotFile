@@ -1,0 +1,145 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+  \PYG{c+c1}{;;\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}语言环境字符集设置结束\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{p}{(}\PYG{n+nv}{set\PYGZhy{}language\PYGZhy{}environment} \PYG{l+s+ss}{\PYGZsq{}utf\PYGZhy{}8}\PYG{p}{)}
+
+\PYG{c+c1}{;;缩进}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{tex\PYGZhy{}basic\PYGZhy{}offset} \PYG{l+m+mi}{4}\PYG{p}{)}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{latex\PYGZhy{}basic\PYGZhy{}offset} \PYG{l+m+mi}{4}\PYG{p}{)}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{php\PYGZhy{}basic\PYGZhy{}offset} \PYG{l+m+mi}{4}\PYG{p}{)}
+
+\PYG{c+c1}{;;去行尾空格}
+\PYG{c+c1}{;; (add\PYGZhy{}hook \PYGZsq{}before\PYGZhy{}save\PYGZhy{}hook \PYGZsq{}delete\PYGZhy{}trailing\PYGZhy{}whitespace)}
+
+\PYG{c+c1}{;;取消滚动栏}
+\PYG{p}{(}\PYG{n+nv}{set\PYGZhy{}scroll\PYGZhy{}bar\PYGZhy{}mode} \PYG{n+no}{nil}\PYG{p}{)}
+\PYG{c+c1}{;;取消工具栏}
+\PYG{p}{(}\PYG{n+nv}{tool\PYGZhy{}bar\PYGZhy{}mode} \PYG{n+no}{nil}\PYG{p}{)}
+\PYG{c+c1}{;;启动设置}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{default\PYGZhy{}frame\PYGZhy{}alist}
+      \PYG{o}{\PYGZsq{}}\PYG{p}{((}\PYG{n+nv}{vertical\PYGZhy{}scroll\PYGZhy{}bars}\PYG{p}{)}
+\PYG{n+nv}{\PYGZca{}\PYGZca{}I}\PYG{p}{(}\PYG{n+nv}{tool\PYGZhy{}bar\PYGZhy{}lines} \PYG{o}{.} \PYG{l+m+mi}{0}\PYG{p}{)}
+\PYG{n+nv}{\PYGZca{}\PYGZca{}I}\PYG{p}{(}\PYG{n+nv}{menu\PYGZhy{}bar\PYGZhy{}lines} \PYG{o}{.} \PYG{l+m+mi}{0}\PYG{p}{)}
+\PYG{n+nv}{\PYGZca{}\PYGZca{}I}\PYG{p}{(}\PYG{n+nv}{right\PYGZhy{}fringe}\PYG{p}{)}
+\PYG{n+nv}{\PYGZca{}\PYGZca{}I}\PYG{p}{(}\PYG{n+nv}{left\PYGZhy{}fringe}\PYG{p}{)))}
+
+\PYG{c+c1}{;;显示时间设置}
+\PYG{p}{(}\PYG{n+nv}{display\PYGZhy{}time\PYGZhy{}mode} \PYG{l+m+mi}{1}\PYG{p}{)}\PYG{c+c1}{;;启用时间显示设置，在minibuffer上面的那个杠上}
+
+\PYG{c+c1}{;;设置打开文件的缺省路径}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{default\PYGZhy{}directory} \PYG{l+s}{\PYGZdq{}/home/xiaohai\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c+c1}{;;关闭烦人的出错时的提示声}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{visible\PYGZhy{}bell} \PYG{n+no}{t}\PYG{p}{)}
+
+\PYG{c+c1}{;;关闭emacs启动时的画面}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{inhibit\PYGZhy{}startup\PYGZhy{}message} \PYG{n+no}{t}\PYG{p}{)}
+
+\PYG{c+c1}{;;关闭gnus启动时的画面}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{gnus\PYGZhy{}inhibit\PYGZhy{}startup\PYGZhy{}message} \PYG{n+no}{t}\PYG{p}{)}
+
+\PYG{c+c1}{;; 改变 Emacs 固执的要你回答 yes 的行为。按 y 或空格键表示 yes，n 表示 no。}
+\PYG{p}{(}\PYG{n+nf}{fset} \PYG{l+s+ss}{\PYGZsq{}yes\PYGZhy{}or\PYGZhy{}no\PYGZhy{}p} \PYG{l+s+ss}{\PYGZsq{}y\PYGZhy{}or\PYGZhy{}n\PYGZhy{}p}\PYG{p}{)}
+
+\PYG{c+c1}{;; 显示行列号(缓冲区的)}
+\PYG{c+c1}{;; (global\PYGZhy{}linum\PYGZhy{}mode 1) ; always show line numbers}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{column\PYGZhy{}number\PYGZhy{}mode} \PYG{n+no}{t}\PYG{p}{)}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{line\PYGZhy{}number\PYGZhy{}mode} \PYG{n+no}{t}\PYG{p}{)}
+
+
+\PYG{c+c1}{;;设置粘贴缓冲条目数量.用一个很大的kill ring(最多的记录个数). 这样防止我不小心删掉重要的东西}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{kill\PYGZhy{}ring\PYGZhy{}max} \PYG{l+m+mi}{200}\PYG{p}{)}
+
+\PYG{c+c1}{;; Autofill in all modes;;}
+\PYG{p}{(}\PYG{k}{setq\PYGZhy{}default} \PYG{n+nv}{auto\PYGZhy{}fill\PYGZhy{}function} \PYG{l+s+ss}{\PYGZsq{}do\PYGZhy{}auto\PYGZhy{}fill}\PYG{p}{)}
+
+\PYG{c+c1}{;;把 fill\PYGZhy{}column 设为 60. 这样的文字更好读}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{default\PYGZhy{}fill\PYGZhy{}column} \PYG{l+m+mi}{300}\PYG{p}{)}
+
+\PYG{c+c1}{;;tab键为8个字符宽度}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{default\PYGZhy{}tab\PYGZhy{}width} \PYG{l+m+mi}{8}\PYG{p}{)}
+
+\PYG{c+c1}{;;不用 TAB 字符来indent, 这会引起很多奇怪的错误。编辑 Makefile 的时候也不用担心，因为 makefile\PYGZhy{}mode 会把 TAB 键设置成真正的 TAB 字符，并且加亮显示的。}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{tab\PYGZhy{}stop\PYGZhy{}list} \PYG{p}{())}
+
+\PYG{c+c1}{;;设置 sentence\PYGZhy{}end 可以识别中文标点。不用在 fill 时在句号后插入两个空格。}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{sentence\PYGZhy{}end} \PYG{l+s}{\PYGZdq{}\PYGZbs{}\PYGZbs{}([。！？]\PYGZbs{}\PYGZbs{}|……\PYGZbs{}\PYGZbs{}|[.?!][]\PYGZbs{}\PYGZdq{}\PYGZsq{})\PYGZcb{}]*\PYGZbs{}\PYGZbs{}(\PYGZdl{}\PYGZbs{}\PYGZbs{}|[ \PYGZbs{}t]\PYGZbs{}\PYGZbs{})\PYGZbs{}\PYGZbs{})[ \PYGZbs{}t\PYGZbs{}n]*\PYGZdq{}}\PYG{p}{)}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{sentence\PYGZhy{}end\PYGZhy{}double\PYGZhy{}space} \PYG{n+no}{nil}\PYG{p}{)}
+
+\PYG{c+c1}{;;可以递归的使用 minibuffer}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{enable\PYGZhy{}recursive\PYGZhy{}minibuffers} \PYG{n+no}{t}\PYG{p}{)}
+
+\PYG{c+c1}{;;防止页面滚动时跳动， scroll\PYGZhy{}margin 3 可以在靠近屏幕边沿3行时就开始滚动，可以很好的看到上下文。}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{scroll\PYGZhy{}margin} \PYG{l+m+mi}{3} \PYG{n+nv}{scroll\PYGZhy{}conservatively} \PYG{l+m+mi}{10000}\PYG{p}{)}
+
+\PYG{c+c1}{;;设置缺省主模式是text，,并进入auto\PYGZhy{}fill次模式.而不是基本模式fundamental\PYGZhy{}mode}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{default\PYGZhy{}major\PYGZhy{}mode} \PYG{l+s+ss}{\PYGZsq{}text\PYGZhy{}mode}\PYG{p}{)}
+\PYG{p}{(}\PYG{n+nv}{add\PYGZhy{}hook} \PYG{l+s+ss}{\PYGZsq{}text\PYGZhy{}mode\PYGZhy{}hook} \PYG{l+s+ss}{\PYGZsq{}turn\PYGZhy{}on\PYGZhy{}auto\PYGZhy{}fill}\PYG{p}{)}
+
+\PYG{c+c1}{;;打开括号匹配显示模式}
+\PYG{p}{(}\PYG{n+nv}{show\PYGZhy{}paren\PYGZhy{}mode} \PYG{n+no}{t}\PYG{p}{)}
+\PYG{c+c1}{;;括号匹配时可以高亮显示另外一边的括号，但光标不会烦人的跳到另一个括号处。}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{show\PYGZhy{}paren\PYGZhy{}style} \PYG{l+s+ss}{\PYGZsq{}parenthesis}\PYG{p}{)}
+
+\PYG{c+c1}{;;光标靠近鼠标指针时，让鼠标指针自动让开，别挡住视线。}
+\PYG{p}{(}\PYG{n+nv}{mouse\PYGZhy{}avoidance\PYGZhy{}mode} \PYG{l+s+ss}{\PYGZsq{}animate}\PYG{p}{)}
+
+\PYG{c+c1}{;;在标题栏显示buffer的名字，而不是 emacs@wangyin.com 这样没用的提示。}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{frame\PYGZhy{}title\PYGZhy{}format} \PYG{l+s}{\PYGZdq{}emacs@\PYGZpc{}b\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c+c1}{;;在行首 C\PYGZhy{}k 时，同时删除该行。}
+\PYG{p}{(}\PYG{k}{setq\PYGZhy{}default} \PYG{n+nv}{kill\PYGZhy{}whole\PYGZhy{}line} \PYG{n+no}{t}\PYG{p}{)}
+
+\PYG{c+c1}{;;设定不产生备份文件}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{make\PYGZhy{}backup\PYGZhy{}files} \PYG{n+no}{nil}\PYG{p}{)}
+
+\PYG{c+c1}{;;自动保存模式}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{auto\PYGZhy{}save\PYGZhy{}mode} \PYG{n+no}{nil}\PYG{p}{)}
+
+\PYG{c+c1}{;;允许屏幕左移}
+\PYG{p}{(}\PYG{n+nf}{put} \PYG{l+s+ss}{\PYGZsq{}scroll\PYGZhy{}left} \PYG{l+s+ss}{\PYGZsq{}disabled} \PYG{n+no}{nil}\PYG{p}{)}
+
+\PYG{c+c1}{;;允许屏幕右移}
+\PYG{p}{(}\PYG{n+nf}{put} \PYG{l+s+ss}{\PYGZsq{}scroll\PYGZhy{}right} \PYG{l+s+ss}{\PYGZsq{}disabled} \PYG{n+no}{nil}\PYG{p}{)}
+
+
+\PYG{c+c1}{;;允许emacs和外部其他程序的粘贴}
+\PYG{c+c1}{;; (setq x\PYGZhy{}select\PYGZhy{}enable\PYGZhy{}clipboard t)}
+
+\PYG{c+c1}{;;设置有用的个人信息,这在很多地方有用。}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nf}{user\PYGZhy{}full\PYGZhy{}name} \PYG{l+s}{\PYGZdq{}jinxiaohai\PYGZdq{}}\PYG{p}{)}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{user\PYGZhy{}mail\PYGZhy{}address} \PYG{l+s}{\PYGZdq{}xiaohaijin@outlook.com\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c+c1}{;;Non\PYGZhy{}nil if Transient\PYGZhy{}Mark mode is enabled.}
+\PYG{p}{(}\PYG{k}{setq\PYGZhy{}default} \PYG{n+nv}{transient\PYGZhy{}mark\PYGZhy{}mode} \PYG{n+no}{t}\PYG{p}{)}
+
+\PYG{c+c1}{;; 当光标在行尾上下移动的时候，始终保持在行尾。}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{track\PYGZhy{}eol} \PYG{n+no}{t}\PYG{p}{)}
+
+\PYG{c+c1}{;; 当浏览 man page 时，直接跳转到 man buffer。}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{Man\PYGZhy{}notify\PYGZhy{}method} \PYG{l+s+ss}{\PYGZsq{}pushy}\PYG{p}{)}
+
+\PYG{c+c1}{;;设置home键指向buffer开头，end键指向buffer结尾}
+\PYG{p}{(}\PYG{n+nv}{global\PYGZhy{}set\PYGZhy{}key} \PYG{p}{[}\PYG{n+nv}{home}\PYG{p}{]} \PYG{l+s+ss}{\PYGZsq{}beginning\PYGZhy{}of\PYGZhy{}buffer}\PYG{p}{)}
+\PYG{p}{(}\PYG{n+nv}{global\PYGZhy{}set\PYGZhy{}key} \PYG{p}{[}\PYG{n+nv}{end}\PYG{p}{]} \PYG{l+s+ss}{\PYGZsq{}end\PYGZhy{}of\PYGZhy{}buffer}\PYG{p}{)}
+
+\PYG{c+c1}{;; C\PYGZhy{}f5, 设置编译命令; f5, 保存所有文件然后编译当前窗口文件}
+\PYG{p}{(}\PYG{n+nb}{defun} \PYG{n+nv}{du\PYGZhy{}onekey\PYGZhy{}compile} \PYG{p}{()}
+  \PYG{l+s}{\PYGZdq{}Save buffers and start compile\PYGZdq{}}
+  \PYG{p}{(}\PYG{k}{interactive}\PYG{p}{)}
+  \PYG{p}{(}\PYG{n+nv}{save\PYGZhy{}some\PYGZhy{}buffers} \PYG{n+no}{t}\PYG{p}{)}
+  \PYG{p}{(}\PYG{n+nv}{switch\PYGZhy{}to\PYGZhy{}buffer\PYGZhy{}other\PYGZhy{}window} \PYG{l+s}{\PYGZdq{}*compilation*\PYGZdq{}}\PYG{p}{)}
+  \PYG{p}{(}\PYG{n+nv}{compile} \PYG{n+nv}{compile\PYGZhy{}command}\PYG{p}{))}
+\PYG{p}{(}\PYG{n+nv}{global\PYGZhy{}set\PYGZhy{}key} \PYG{p}{[}\PYG{n+nv}{C\PYGZhy{}f5}\PYG{p}{]} \PYG{l+s+ss}{\PYGZsq{}compile}\PYG{p}{)}
+\PYG{p}{(}\PYG{n+nv}{global\PYGZhy{}set\PYGZhy{}key} \PYG{p}{[}\PYG{n+nv}{f5}\PYG{p}{]} \PYG{l+s+ss}{\PYGZsq{}du\PYGZhy{}onekey\PYGZhy{}compile}\PYG{p}{)}
+
+\PYG{c+c1}{;; 设置时间戳，标识出最后一次保存文件的时间。}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{time\PYGZhy{}stamp\PYGZhy{}active} \PYG{n+no}{t}\PYG{p}{)}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{time\PYGZhy{}stamp\PYGZhy{}warn\PYGZhy{}inactive} \PYG{n+no}{t}\PYG{p}{)}
+\PYG{p}{(}\PYG{k}{setq} \PYG{n+nv}{time\PYGZhy{}stamp\PYGZhy{}format} \PYG{l+s}{\PYGZdq{}\PYGZpc{}:y\PYGZhy{}\PYGZpc{}02m\PYGZhy{}\PYGZpc{}02d \PYGZpc{}3a \PYGZpc{}02H:\PYGZpc{}02M:\PYGZpc{}02S jinxiaohai\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c+c1}{;;设置M\PYGZhy{}g为goto\PYGZhy{}line}
+\PYG{p}{(}\PYG{n+nv}{global\PYGZhy{}set\PYGZhy{}key} \PYG{p}{(}\PYG{n+nv}{kbd} \PYG{l+s}{\PYGZdq{}M\PYGZhy{}g\PYGZdq{}}\PYG{p}{)} \PYG{l+s+ss}{\PYGZsq{}goto\PYGZhy{}line}\PYG{p}{)}
+
+\PYG{c+c1}{;; ;;取消control+space键设为mark}
+\PYG{c+c1}{;; (global\PYGZhy{}set\PYGZhy{}key (kbd \PYGZdq{}C\PYGZhy{}SPC\PYGZdq{}) \PYGZsq{}nil)}
+\end{Verbatim}

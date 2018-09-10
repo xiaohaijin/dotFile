@@ -1,0 +1,29 @@
+# -*- mode: snippet -*-
+# name: c++
+# contributor: xiaohai
+# expand-env: ((yas-indent-line 'fixed))
+# key: c++
+# --
+##########################################################
+##                 Created  by  xiaohai                 ##
+##                 Telphone : 18501781924               ##
+##            E-mail : jinxiaohai@sinap.ac.cn           ##
+##            E-mail : xiaohaijin@outlook.com           ##
+##   Address : Shanghai Institute of Applied Physics    ##
+##########################################################
+
+EXE=${1:demo}.exe
+OBJS=$1.o $0
+
+CC=g++
+CFLAGE= -Wall -g -std=c++11
+
+\$(EXE):\$(OBJS)
+	\$(CC) \$(OBJS) -o \$(EXE)
+
+%.o:%.cpp
+	$(CC) $(CFLAGE) -c $< -o $@
+
+.PHONY:clean
+clean:
+	$(RM) -r \$(OBJS) \$(EXE)

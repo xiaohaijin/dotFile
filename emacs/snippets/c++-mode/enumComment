@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+#name: enumComment
+#key: enumComment
+# --
+///  \brief ${1:enum description}
+///
+///  ${2:Detailed description}
+///

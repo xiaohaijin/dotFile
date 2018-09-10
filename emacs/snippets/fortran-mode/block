@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: block
+# key: block
+# --
+cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+cccccc    $0
+cccccc
+cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc

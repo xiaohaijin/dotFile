@@ -1,0 +1,35 @@
+# -*- mode: snippet -*-
+# name: root
+# contributor: xiaohai
+# expand-env: ((yas-indent-line 'fixed))
+# key: root
+# --
+##########################################################
+##                 Created  by  xiaohai                 ##
+##                 Telphone : 18501781924               ##
+##            E-mail : jinxiaohai@sinap.ac.cn           ##
+##            E-mail : xiaohaijin@outlook.com           ##
+##   Address : Shanghai Institute of Applied Physics    ##
+##########################################################
+
+EXE = ${1:ana}.exe
+OBJ = $1.o $0
+ROOTLIBS     =   \$(shell root-config --libs)
+ROOTGLIBS    =   \$(shell root-config --glibs)
+
+INCDIR = -I\$(ROOTSYS)/include
+LIBDIR = -L\$(ROOTSYS)/lib
+
+CC = g++ -std=c++11
+FLAGS = -Wall -g \$(INCDIR) \$(LIBDIR)
+COMPILE = \$(CC) \$(FLAGS) -c
+
+\$(EXE):\$(OBJ)
+	\$(CC) -o \$(EXE) \$(OBJ) \$(ROOTLIBS) \$(ROOTGLIBS)
+
+%.o:%.cpp
+	$(COMPILE) $< -o $@
+
+.PHONY:clean
+clean:
+	$(RM) -r \$(OBJ) \$(EXE)

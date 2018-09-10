@@ -1,0 +1,231 @@
+\chapter{linux配置}
+
+\section{CMake安装和常用库的CMakeLists.txt的写法}
+CMake是一个跨平台的生成工具，%
+主要使用平台无关的CMakeLists.txt生成平台相关的Makefile文件。%
+
+\noindent\textbf{\color{magenta}CMake的安装：}
+\begin{bashcode}
+tar -zvxf cmake.tar.gz
+cd cmake
+./configure --prefix=to/install/path --qt-gui
+make -j4
+make install
+\end{bashcode}
+
+
+\subsection{Boost}
+\noindent\textbf{\color{magenta}Boost库的CMakeList.txt的写法：}
+\begin{cmakecode}
+  cmake_minimum_required(VERSION 3.0)
+
+  set(CMAKE_PREFIX_PATH "/opt/boost/install")
+  set(Boost_USE_STATIC_LIBS OFF)
+  set(Boost_USE_MULTITHREADED ON)
+  set(Boost_STATIC_RUNTIME OFF)
+
+  find_package(Boost)
+  include_directories(\${Boost_INCLUDE_DIRS})
+
+  message(STATUS \${Boost_INCLUDE_DIRS})
+  message(STATUS \${Boost_LIBRARIES})
+
+  add_subdirectory(src)
+\end{cmakecode}
+其中Boost\_INCLUDE\_DIRS必须显示的添加到头文件的搜索路径中。
+
+\subsection{OpenCV}
+\noindent\textbf{\color{magenta}OpenCV库的CMakeLists.txt的写法：}
+\begin{cmakecode}
+  file(GLOB SRC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+
+  # Declare the executable target built from your sources                        
+  add_executable(${PROJECT_NAME} ${SRC_FILES})
+
+  # Link your application with OpenCV libraries           
+  target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
+
+  # 安装
+  install(TARGETS ${PROJECT_NAME}
+          RUNTIME DESTINATION ${PROJECT_SOURCE_DIR}/bin)
+\end{cmakecode}
+注意OpenCV的库的搜索结果是放在OpenCV\_LIBS这个变量中的，%
+且头文件无需添加到搜索路径中。%
+最好的行是就是看下OpenCV库自带例子的写法。
+
+\subsection{ROOT}
+\noindent\textbf{\color{magenta}ROOT库的CMakeLists.txt的写法：}
+\begin{cmakecode}
+  # 生成files
+  file(GLOB SRC "${PROJECT_SOURCE_DIR}/src/*.cpp")
+
+  # 添加目标文件
+  add_executable(${PROJECT_NAME} ${SRC})
+
+  # 添加依赖库
+  target_link_libraries(${PROJECT_NAME} ${ROOT_LIBRARIES})
+
+  # 安装
+  install(TARGETS ${PROJECT_NAME}
+          RUNTIME DESTINATION ${PROJECT_SOURCE_DIR}/bin)
+\end{cmakecode}
+
+注意ROOT的库的搜索结果是放在ROOT\_LIBRARIES这个变量中的，%
+且头文件无需添加到搜索路径中。%
+
+\subsection{Qt5}
+\noindent\textbf{\color{magenta}Qt5库的CMakeLists.txt的写法：}
+\begin{cmakecode}
+  # 最低需要2.8.11版本
+  cmake_minimum_required(VERSION 3.0)
+
+  # 设定Qt的安装位置
+  set(CMAKE_PREFIX_PATH "/opt/qt/install/")
+
+  # include的目录包含当前目录
+  set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+  # 工程名字
+  project(QtUseCMake)
+
+  # 查找需要的Qt库文件
+  find_package(Qt5Widgets REQUIRED)
+  find_package(Qt5Core REQUIRED)
+  find_package(Qt5Gui REQUIRED)
+
+  # 设定头文件和UI的搜索路径
+  set(HEADER_DIR "${CMAKE_CURRENT_SOURCE_DIR}/include")
+  set(GUI_DIR "${CMAKE_CURRENT_SOURCE_DIR}/ui")
+  set(RESOURCES_DIR "${CMAKE_CURRENT_SOURCE_DIR}/resources")
+
+  # 添加头文件的搜索路径
+  include_directories(${HEADER_DIR})
+
+  # 添加子目录
+  add_subdirectory(src)
+
+  # 安装
+  install(FILES COPYRIGHT README.md
+          DESTINATION doc)
+\end{cmakecode}
+其中src目录下的CMakeLists.txt的写法如下：
+\begin{cmakecode}
+  # 生成files
+  file(GLOB SRC "${PROJECT_SOURCE_DIR}/src/*.cpp")
+  file(GLOB MOC_HEADER "${PROJECT_SOURCE_DIR}/include/*.h")
+  file(GLOB UIC_UI "${PROJECT_SOURCE_DIR}/ui/*.ui")
+  file(GLOB QRC "${PROJECT_SOURCE_DIR}/resources/action.qrc")
+
+  # 通过UI文件生成对应的头文件
+  qt5_wrap_cpp(MOC_SRC ${MOC_HEADER})
+  qt5_wrap_ui(UIC_SRC ${UIC_UI})
+  qt5_add_resources(QRC_SRC ${QRC})
+
+  # 添加目标文件
+  add_executable(${PROJECT_NAME} ${SRC} ${MOC_SRC} ${UIC_SRC} ${QRC_SRC})
+
+  # 添加依赖库
+  target_link_libraries(${PROJECT_NAME} Qt5::Widgets Qt5::Core Qt5::Gui)
+
+  # 安装
+  install(TARGETS ${PROJECT_NAME}
+          RUNTIME DESTINATION bin)
+\end{cmakecode}
+库的依赖方式为target\_link\_libraries(target Qt5::Core Qt5::Widgets Qt5::Gui Qt5::其它模块)。
+
+
+
+
+
+\section{OpenCV的安装}
+这里我们主要给出Ubuntu下OpenCV的安装例子。%
+首先我们要先安装OpenCV所需要的依赖，%
+打开terminal输入以下的命令：
+\begin{bashcode}
+  sudo apt-get -y install libopencv-dev build-essential cmake libdc1394-22 libdc1394-22-dev libjpeg-dev libpng12-dev libtiff-dev libjasper-dev libavcodec-dev libavformat-dev libswscale-dev libxine-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libv41-dev libtbb-dev libqt4-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev libvorbis-dev libxvidcore-dev x264 v41-utils
+\end{bashcode}
+
+接着我们从官网或者github下载自己需要版本的源代码，%
+并且下载opencv\_contrib的测试模块。%
+分别解压缩两个源代码。%
+\begin{bashcode}
+  cd opencv-版本
+  mkdir build
+  cd build
+  cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/full/path/to/opencv/install/dir -D INSTALL_C_EXAMPLES=ON -D BUILD_EXAMPLES=ON -D OPENCV_EXTRA_MODULES_PATH=/full/path/to/opencv-contrib/modules ../
+  make -j4
+  sudo make install
+\end{bashcode}
+ 剩下只需要修改下PATH和LD\_LIBRARY\_PATH环境变量的值。
+
+
+\section{GNOME主题桌面配置}
+一个好看的GNOME桌面可以使做事情时感到赏心悦目，%
+因此倒腾一个好看的桌面主题是势在必然的。%
+各种下载主题配置的工具的网址肯定是gnome的官网了。%
+这里只记录下我用了什么主题：\\
+\noindent{}\textbf{\color{magenta}Appearance的控制：}
+\begin{itemize}
+\item{GTK+：Sierra-compact-light-thin}
+\item{Icons：Flat-Remix-Light}
+\item{Cursor：Adwaita(default)}
+\item{Shell theme：Sierra-compact-light-thin}
+\item{Enable animations：打开}
+\end{itemize}
+
+\noindent{}\textbf{\color{magenta}Desktop的控制：}
+\begin{itemize}
+\item{Mode：两个模式全部的打开}
+\item{墙纸：这个这个看着找吧}
+\end{itemize}
+
+\noindent{}\textbf{\color{magenta}Extensions：}
+\begin{itemize}
+\item{打开User themes即可，剩下的自己看着办吧。}
+\end{itemize}
+
+\noindent{}\textbf{\color{magenta}Fonts：}
+\begin{itemize}
+\item{Window Titles : Cantarell Bold 13}
+\item{Interface : Cantarell Regular 13}
+\item{Monospace : Monospace Regular 13}
+\item{Hinting : Slight}
+\item{Antialiasing : Grayscale}
+\item{Scaling Factor : 1.00}
+\end{itemize}
+
+\noindent{}\textbf{\color{magenta}Keyboard and Mouse}
+\begin{itemize}
+\item{Show All Input Sources : close}
+\item{Key theme : Emacs}
+\item{Switch between overview and desktop : Left super}
+\item{Acceleration profile : Flat}
+\item{Show location of pointer : open}
+\item{Middle-click Paste : open}
+\item{Click method : default}
+\end{itemize}
+
+\noindent{}\textbf{\color{magenta}Power}
+\begin{itemize}
+\item{Action : Suspend}
+\item{Don't suspend on lid close : close}
+\end{itemize}
+
+\noindent{}\textbf{\color{magenta}Top Bar}
+\begin{itemize}
+\item{Show Application Menu : on}
+\item{Show date : checked}
+\item{Show seconds : checked}
+\item{Show week numbers : checked}
+\end{itemize}
+
+
+
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

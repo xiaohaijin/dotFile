@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+  \PYG{n+nb}{cd} opencv\PYGZhy{}版本
+  mkdir build
+  \PYG{n+nb}{cd} build
+  cmake \PYGZhy{}D \PYG{n+nv}{CMAKE\PYGZus{}BUILD\PYGZus{}TYPE}\PYG{o}{=}RELEASE \PYGZhy{}D \PYG{n+nv}{CMAKE\PYGZus{}INSTALL\PYGZus{}PREFIX}\PYG{o}{=}/full/path/to/opencv/install/dir \PYGZhy{}D INSTALL\PYG{l+s+se}{\PYGZbs{}\PYGZus{}}C\PYG{l+s+se}{\PYGZbs{}\PYGZus{}}EXAMPLES\PYG{o}{=}ON \PYGZhy{}D BUILD\PYG{l+s+se}{\PYGZbs{}\PYGZus{}}EXAMPLES\PYG{o}{=}ON \PYGZhy{}D OPENCV\PYG{l+s+se}{\PYGZbs{}\PYGZus{}}EXTRA\PYG{l+s+se}{\PYGZbs{}\PYGZus{}}MODULES\PYG{l+s+se}{\PYGZbs{}\PYGZus{}}PATH\PYG{o}{=}/full/path/to/opencv\PYGZhy{}contrib/modules ../
+  make \PYGZhy{}j4
+  sudo make install
+\end{Verbatim}

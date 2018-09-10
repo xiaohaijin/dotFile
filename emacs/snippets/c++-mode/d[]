@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: declaration operator[]
+# key: operator[]
+# --
+${1:Type}& operator[](${2:int index});

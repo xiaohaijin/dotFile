@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: define const []
+# key: operator[]
+# --
+const ${1:Type}& operator[](${2:int index}) const
+{
+        $0
+}

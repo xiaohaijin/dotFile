@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+  \PYG{n+nb}{file}\PYG{p}{(}\PYG{l+s}{GLOB} \PYG{l+s}{SRC\PYGZus{}FILES} \PYG{o}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{CMAKE\PYGZus{}CURRENT\PYGZus{}SOURCE\PYGZus{}DIR}\PYG{o}{\PYGZcb{}}\PYG{l+s}{/*.cpp}\PYG{p}{)}
+
+  \PYG{c}{\PYGZsh{} Declare the executable target built from your sources}
+  \PYG{n+nb}{add\PYGZus{}executable}\PYG{p}{(}\PYG{o}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{PROJECT\PYGZus{}NAME}\PYG{o}{\PYGZcb{}} \PYG{o}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{SRC\PYGZus{}FILES}\PYG{o}{\PYGZcb{}}\PYG{p}{)}
+
+  \PYG{c}{\PYGZsh{} Link your application with OpenCV libraries}
+  \PYG{n+nb}{target\PYGZus{}link\PYGZus{}libraries}\PYG{p}{(}\PYG{o}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{PROJECT\PYGZus{}NAME}\PYG{o}{\PYGZcb{}} \PYG{o}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{OpenCV\PYGZus{}LIBS}\PYG{o}{\PYGZcb{}}\PYG{p}{)}
+
+  \PYG{c}{\PYGZsh{} 安装}
+  \PYG{n+nb}{install}\PYG{p}{(}\PYG{l+s}{TARGETS} \PYG{o}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{PROJECT\PYGZus{}NAME}\PYG{o}{\PYGZcb{}}
+  \PYG{l+s}{RUNTIME} \PYG{l+s}{DESTINATION} \PYG{o}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{PROJECT\PYGZus{}SOURCE\PYGZus{}DIR}\PYG{o}{\PYGZcb{}}\PYG{l+s}{/bin}\PYG{p}{)}
+\end{Verbatim}

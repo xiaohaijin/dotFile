@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: figure
+# key: figure
+# --
+plt.figure(${1:1}, figsize=(${2:10, 10}), dpi=${3:100})$0

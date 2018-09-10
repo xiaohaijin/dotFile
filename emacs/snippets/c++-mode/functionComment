@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+#name: functionComment
+#key: functionComment
+# --
+/// \brief ${1:function description}
+///
+///
+/// \param
+/// \return
+/// \see
+/// \note
+/// \attention
+/// \bug
+/// \warning

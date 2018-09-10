@@ -1,0 +1,155 @@
+# -*- mode: snippet -*-
+# name: BOOK
+# key: BOOK
+# --
+%#-*- coding:utf-8 -*-
+\documentclass[11pt,UTF8,hyperref,openany]{ctexbook}
+\usepackage{amsmath}             %%%%多种的公式环境和数学命令
+\usepackage{amssymb}             %%%%数学符号生成命令
+\usepackage{array}               %%%%数组和表格
+\usepackage{booktabs}            %%%%水平的表格线
+\usepackage{calc}                %%%%四则运算
+\usepackage{caption}             %%%%插图和表格
+% \usepackage{ctex}                %%%%中文字体
+\usepackage{ctexcap}             %%%%中文字体和标题
+\usepackage{color}
+\usepackage{fancyhdr}            %%%%页眉页脚设置
+\usepackage{graphicx}            %%%%插图
+\usepackage{geometry}            %%%%版面尺寸控制
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm, head=2cm, foot=1cm}
+% head=?cm, headmap=?cm
+\usepackage{hyperref}            %%%%超链接
+\usepackage{ifthen}              %%%%条件
+\usepackage{longtable}           %%%%跨页表格
+\usepackage{lineno}              %%%%行号控制
+\usepackage{listings}            %%%%C++
+\usepackage{multicol}            %%%%多栏
+\usepackage{makeidx}             %%%%索引
+\usepackage{ntheorem}            %%%%定理设置
+\usepackage{paralist}            %%%%列表
+\usepackage{tabularx}            %%%%表格的列宽
+\usepackage{titlesec}            %%%%章节标题
+\usepackage{fancyvrb}            %%%%抄录
+\usepackage{fontspec}            %%%%字体
+\usepackage{titletoc}            %%%%目录格式
+\usepackage{xcolor}              %%%%颜色处理
+\usepackage{xeCJK}               %%%%中日朝文字处理
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C++
+\definecolor{keywordcolor}{rgb}{0, 0, 1}
+\lstset{breaklines}
+\lstset{extendedchars=false}
+\lstset{language=C++, keywordstyle=\color{keywordcolor}\bfseries,
+basicstyle=\ttfamily,
+showstringspaces=false,
+captionpos=b
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% newcommand
+\newcommand{\mycmdA}{ }
+\newcommand{\mycmdB}[1]{{\heiti #1}}
+\newcommand{\mycmdC}[2]{$#1_1,#1_2,\dots,#1_#2$}
+
+
+\author{xiaohai}
+\date{1990/10/12}
+\title{my title}
+
+\begin{document}
+% 页码的设置
+\pagenumbering{Roman}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  目录的设置
+\titlecontents{chapter}[4em]{\addvspace{2.3mm}\bf}{%
+  \contentslabel{4.0em}}{}{\titlerule*[5pt]{$\cdot$}\contentspage}
+\titlecontents{section}[4em]{}{\contentslabel{2.5em}}{}{%
+  \titlerule*[5pt]{$\cdot$}\contentspage}
+\titlecontents{subsection}[7.2em]{}{\contentslabel{3.3em}}{}{%
+  \titlerule*[5pt]{$\cdot$}\contentspage}
+\tableofcontents
+
+%设置插图的目录
+\listoffigures
+%设置表格的目录
+\listoftables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{章标题}
+\section{节标题}
+\subsection{小节标题}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagenumbering{arabic}
+%  footnote
+\renewcommand{\thefootnote}{}
+\footnote{\heiti{ 作者简介}: 金小海，男}
+\footnote{\heiti{ 现在单位}: Sinap}
+%将脚注的引用记数设为0.
+\setcounter{footnote}{0}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+As mentioned previously, the baryon-rich partonic matter\footnote{This is footnote.}
+produced in heavy ion collisions ~\cite{检索名1} from RHIC low-energy runs and at FAIR 
+is expected to ~\cite{检索名2} undergo a first-order phase transition to hadronic 
+matter. jinxiaohaic\index{man!haoren} is a good man, xiaopangzi\index{woman!huairen} 
+is a bad man.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 引用
+\begin{theindex}
+\item man
+\subitem haoren, \hyperpage{1}
+\subsubitem haoren, 1
+\indexspace
+\item woman
+\subitem huairen, 1
+\subsubitem huairen, 1
+\end{theindex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 附录
+\appendix
+\chapter{C++程序}
+\section{Ising model}
+\section{Monter carlo method}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 参考文献
+\begin{thebibliography}{99}
+\bibitem[文献序号1]{检索名1}文献的信息1
+\bibitem[文献序号2]{检索名2}文献的信息2
+\end{thebibliography}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 链接的方式
+\noindent\url{xiaohaijin@outlook.com}\newline
+\href{http://192.168.1.119/self/index.html}{自己的http目录}\newline
+\href{http://10.10.11.64}{64}\newline
+% 页码链接
+点我回到第一页\hyperpage{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 局部行号
+\begin{linenumbers}[2]%可选参数是起始的行号
+\noindent 394598384795\newline
+1233453453\newline
+123345345345\newline
+123234234\newline
+\end{linenumbers}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{lstlisting}
+#include <iostream>
+using namespace std;
+
+int main(int argc, char** argv)
+{
+  cout << "Hello Tex." << endl;
+  return 0;
+}
+\end{lstlisting}
+
+\end{document}
