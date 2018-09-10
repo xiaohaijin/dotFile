@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE QtCreatorSession>
+<!-- Written by QtCreator 4.5.1, 2018-09-09T22:22:08. -->
+<qtcreator>
+ <data>
+  <variable>CascadeSetActive</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>Color</variable>
+  <value type="QString">#3465a4</value>
+ </data>
+ <data>
+  <variable>EditorSettings</variable>
+  <value type="QByteArray">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</value>
+ </data>
+ <data>
+  <variable>ProjectDependencies</variable>
+  <valuemap type="QVariantMap"/>
+ </data>
+ <data>
+  <variable>ProjectList</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">/home/xiaohai/Github/DataStructureAndAlgorithm/LinearSearch/LinearSearch.pro</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>StartupProject</variable>
+  <value type="QString">/home/xiaohai/Github/DataStructureAndAlgorithm/LinearSearch/LinearSearch.pro</value>
+ </data>
+ <data>
+  <variable>value-ActiveMode</variable>
+  <value type="QString">Edit</value>
+ </data>
+ <data>
+  <variable>value-Breakpoints</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>value-DefaultFormats</variable>
+  <valuemap type="QVariantMap"/>
+ </data>
+ <data>
+  <variable>value-IndividualFormats</variable>
+  <valuemap type="QVariantMap"/>
+ </data>
+ <data>
+  <variable>value-ProjectTree.ExpandData</variable>
+  <valuelist type="QVariantList">
+   <valuelist type="QVariantList">
+    <value type="QString">/home/xiaohai/Github/DataStructureAndAlgorithm/LinearSearch</value>
+    <value type="QString">LinearSearch</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/home/xiaohai/Github/DataStructureAndAlgorithm/LinearSearch</value>
+    <value type="QString">Sources</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/home/xiaohai/Github/DataStructureAndAlgorithm/LinearSearch</value>
+    <value type="QString">Headers</value>
+   </valuelist>
+  </valuelist>
+ </data>
+ <data>
+  <variable>value-TaskWindow.Categories</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">Task.Category.QmlAnalysis</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>value-TaskWindow.IncludeWarnings</variable>
+  <value type="bool">true</value>
+ </data>
+ <data>
+  <variable>value-Watchers</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>valueKeys</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">ActiveMode</value>
+   <value type="QString">Breakpoints</value>
+   <value type="QString">DefaultFormats</value>
+   <value type="QString">IndividualFormats</value>
+   <value type="QString">ProjectTree.ExpandData</value>
+   <value type="QString">TaskWindow.Categories</value>
+   <value type="QString">TaskWindow.IncludeWarnings</value>
+   <value type="QString">Watchers</value>
+  </valuelist>
+ </data>
+</qtcreator>

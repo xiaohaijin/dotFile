@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippets>
+    <snippet group="Text" trigger="global" id="text_global" complement="example" removed="false" modified="true">// This is available in all editors.</snippet>
+    <snippet group="Text" trigger="qmake" id="" complement="qmake" removed="false" modified="false"># OpenCV
+INCLUDEPATH += /opt/opencv/install/include
+LIBS += \\$\\$system(libs_opencv_files)
+
+# ROOT
+INCLUDEPATH += /opt/root/install/include
+LIBS += \\$\\$system(root-config --libs)
+LIBS += \\$\\$system(root-config --glibs)</snippet>
+</snippets>
