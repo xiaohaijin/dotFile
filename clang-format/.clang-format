@@ -1,0 +1,10 @@
+BasedOnStyle: Google
+Language: Cpp
+ColumnLimit: 120
+AllowShortFunctionsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: false
+SortIncludes: true
+NamespaceIndentation: All
+IndentPPDirectives: AfterHash
+ad
+
