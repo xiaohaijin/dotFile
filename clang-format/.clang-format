@@ -6,4 +6,5 @@ AllowShortIfStatementsOnASingleLine: false
 SortIncludes: true
 NamespaceIndentation: All
 IndentPPDirectives: AfterHash
-
+# AlignConsecutiveAssignments: true
+# AlignConsecutiveDeclarations: true
