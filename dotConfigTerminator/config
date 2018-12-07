@@ -1,0 +1,70 @@
+[global_config]
+  geometry_hinting = False
+  title_font = Ubuntu Mono 13
+  title_use_system_font = False
+  window_state = hidden
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = a2a5351a-24e0-4c7e-a62c-c32dbca10705
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 0:29
+      size = 1366, 683
+      title = xiaohai@xiaohai: ~
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      position = 681
+      ratio = 0.500366032211
+      type = HPaned
+    [[[child2]]]
+      order = 0
+      parent = child1
+      position = 339
+      ratio = 0.5
+      type = VPaned
+    [[[terminal3]]]
+      order = 0
+      parent = child2
+      profile = default
+      type = Terminal
+      uuid = a2a5351a-24e0-4c7e-a62c-c32dbca10705
+    [[[terminal4]]]
+      order = 1
+      parent = child2
+      profile = default
+      type = Terminal
+      uuid = 8c7490dc-9fe8-48a2-88c7-3c5660e92ed2
+    [[[terminal5]]]
+      order = 1
+      parent = child1
+      profile = default
+      type = Terminal
+      uuid = 6d52ea12-42a8-450f-a5f0-bbad0e078aa3
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#002b36"
+    background_image = None
+    cursor_shape = ibeam
+    font = Ubuntu Mono 13
+    foreground_color = "#839496"
+    show_titlebar = False
+    use_system_font = False
+  [[xiaohai]]
+    background_color = "#002b36"
+    background_image = None
+    cursor_shape = ibeam
+    font = Ubuntu Mono 13
+    foreground_color = "#839496"
+    icon_bell = False
+    scrollback_lines = 1000
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
